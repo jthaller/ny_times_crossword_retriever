@@ -20,11 +20,12 @@ import os
 # https://stackoverflow.com/questions/26522739/how-to-click-on-the-print-button-on-a-web-page-using-selenium
 website_url = 'https://www.seattletimes.com/games-nytimes-crossword/'
 # driver = webdriver.Chrome()
-
-driver = webdriver.Edge(executable_path="C:\\Users\\jerem\\Documents\\Python\\ny_times_crossword_retriever\\msedgedriver.exe")
-driver = webdriver.Edge()
+# driver = webdriver.Edge(executable_path="C:\\Users\\jerem\\Documents\\Python\\ny_times_crossword_retriever\\msedgedriver.exe")
+# driver = webdriver.Edge()
+driver = webdriver.Ie(executable_path = "C:\\Users\\jerem\\Documents\\Python\\ny_times_crossword_retriever\\IEDriverServer.exe")
 driver.get(website_url)
-assert "NY Times Crossword | The Seattle Times" in driver.title
+assert "Crossword" in driver.title
+driver.close()
 # print_button = a:contains('Print')
 
 # --- click print button ---
