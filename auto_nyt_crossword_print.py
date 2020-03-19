@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from pyrobot import Robot
+import os
 # Selenium drivers to be installed to interact in order for selenium to work.
 # Chrome:	https://sites.google.com/a/chromium.org/chromedriver/downloads
 # Edge:	https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
@@ -18,8 +19,10 @@ from pyrobot import Robot
 # this basically is everything lol
 # https://stackoverflow.com/questions/26522739/how-to-click-on-the-print-button-on-a-web-page-using-selenium
 website_url = 'https://www.seattletimes.com/games-nytimes-crossword/'
-driver = webdriver.Chrome()
-# driver = webdriver.Edge()
+# driver = webdriver.Chrome()
+
+driver = webdriver.Edge(executable_path="C:\\Users\\jerem\\Documents\\Python\\ny_times_crossword_retriever\\msedgedriver.exe")
+driver = webdriver.Edge()
 driver.get(website_url)
 assert "NY Times Crossword | The Seattle Times" in driver.title
 # print_button = a:contains('Print')
