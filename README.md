@@ -1,5 +1,15 @@
+
+*Edit*: Project postponed indefinitely. Something must be wrong with my selenium installation.
+``` driver.get(website_url)
+```
+seems to work fine. Yet calling:
+```
+print(driver.current_url)
+```
+does nothing.
+
 # ny_times_crossword_retriever
-Download and print the Times' daily crossword with a single click. 
+Download and print the Times' daily crossword with a single click.
 
 ## Dependencies
 Selenium must be installed as a driver for your browser:

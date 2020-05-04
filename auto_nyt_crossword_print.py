@@ -23,16 +23,23 @@ website_url = 'https://www.seattletimes.com/games-nytimes-crossword/'
 # driver = webdriver.Edge(executable_path="C:\\Users\\jerem\\Documents\\Python\\ny_times_crossword_retriever\\msedgedriver.exe")
 # driver = webdriver.Edge()
 driver = webdriver.Ie(executable_path = "C:\\Users\\jerem\\Documents\\Python\\ny_times_crossword_retriever\\IEDriverServer.exe")
-driver.get(website_url)
-assert "Crossword" in driver.title
-driver.close()
+# driver.get(website_url)
+# print(driver.get(title))
+
+driver.get("https://www.python.org")
+print(driver.title)
+# assert "Crossword" in driver.title
+# driver.close()
 # print_button = a:contains('Print')
 
-wait = WebDriverWait(driver, 10);
+# wait = WebDriverWait(driver, 10);
 # wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.print-button"))).click()
 # wait.until(ExpectedConditions.elementToBeClickable(By.className("xwordjs-print-button"))).click()
-messageElement = wait.until( ExpectedConditions.presenceOfElementLocated(By.className("xwordjs-print-button")) )
-messageElement.click()
+
+# messageElement = wait.until( ExpectedConditions.presenceOfElementLocated(By.className("xwordjs-print-button")) )
+# messageElement.click()
+# wait.close()
+driver.close()
 
 
 # <button title="Print" class="xwordjs-print-button btn btn-xs btn-default"
