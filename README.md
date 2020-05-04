@@ -1,12 +1,13 @@
 
 *Edit*: Project postponed indefinitely. Something must be wrong with my selenium installation.
-``` driver.get(website_url)
+``` 
+driver.get(website_url)
 ```
 seems to work fine. Yet calling:
 ```
 print(driver.current_url)
 ```
-does nothing.
+does nothing. I suspect a new installation of selenium and chrome would be necessary to get things working. It's not important enough for me to install a new browser, just for this, so I am postponing this project.
 
 # ny_times_crossword_retriever
 Download and print the Times' daily crossword with a single click.
