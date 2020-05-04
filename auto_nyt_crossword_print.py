@@ -1,7 +1,7 @@
 # import bs4
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from pyrobot import Robot
+# from pyrobot import Robot
 import os
 # Selenium drivers to be installed to interact in order for selenium to work.
 # Chrome:	https://sites.google.com/a/chromium.org/chromedriver/downloads
@@ -28,21 +28,31 @@ assert "Crossword" in driver.title
 driver.close()
 # print_button = a:contains('Print')
 
+wait = WebDriverWait(driver, 10);
+# wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.print-button"))).click()
+# wait.until(ExpectedConditions.elementToBeClickable(By.className("xwordjs-print-button"))).click()
+messageElement = wait.until( ExpectedConditions.presenceOfElementLocated(By.className("xwordjs-print-button")) )
+messageElement.click()
+
+
+# <button title="Print" class="xwordjs-print-button btn btn-xs btn-default"
+# driver.findElement(By.className("xwordjs-print-button")).click();
+# driver.findElement(By.cssSelector("button.xwordjs-print-button")).click()
 # --- click print button ---
-printButton = driver.findElement(By.cssSelector("button.xwordjs-print-button"));
-printButton.click();
+# printButton = driver.findElement(By.cssSelector("button.xwordjs-print-button"));
+# printButton.click();
 
 # --- now a popup opens, click print again ---
 # .....might need to add a line to wait for the action to finish.
-printButton_popup = driver.findElement(By.cssSelector("button.btn-default"));
-printButton_popup.click();
+# printButton_popup = driver.findElement(By.cssSelector("button.btn-default"));
+# printButton_popup.click();
 
 #now a new tab should open up with a pdf that needs to be printed
-robot = Robot()
-
-
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
-driver.close()
+# robot = Robot()
+#
+#
+# elem.clear()
+# elem.send_keys("pycon")
+# elem.send_keys(Keys.RETURN)
+# assert "No results found." not in driver.page_source
+# driver.close()
